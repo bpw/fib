@@ -34,8 +34,9 @@
   <target name="fetch" depends="init-hamcrest-properties" if="hamcrest.from-web">
     <property name="hamcrest.web-archive" value="hamcrest-all-${hamcrest.version}.jar"/>
     <mkdir dir="${hamcrest.package.dir}"/>
+    <!-- "http://hamcrest.googlecode.com/files/${hamcrest.web-archive}" -->
     <cachedGet key="${hamcrest.web-archive}"
-         src="http://hamcrest.googlecode.com/files/${hamcrest.web-archive}"
+         src="http://repo1.maven.org/maven2/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar"
          dest="${hamcrest.package.dir}/${hamcrest.web-archive}"/>
     <writeComponentConstants dir="${hamcrest.package.dir}"/>
   </target>
